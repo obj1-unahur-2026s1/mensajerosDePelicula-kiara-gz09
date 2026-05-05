@@ -15,7 +15,7 @@ object roberto {
   method cambiarTransporte(nuevoTrasporte) {
     transporte = nuevoTrasporte
   }
-  method pesoTotal() {
+  method peso() {
     return self.pesoActual() + transporte.pesoTotal()
   }
   method puedeLlamar() {
@@ -26,7 +26,7 @@ object roberto {
 object chuck {
   var peso = 80
 
-  method pesoActual() {
+  method peso() {
     return peso
   }
   method cambiarPeso(nuevoPeso) {
@@ -41,13 +41,13 @@ object chuck {
 object neo {
   var peso = 0
   var credito = false
-  method pesoActual() {
+  method peso() {
     return peso
   }
   method cambiarPeso(nuevoPeso) {
     peso = nuevoPeso
   }
-  method tieneCredito() {
+  method puedeLlamar() {
     return credito
   }
   method cargarCredito() {

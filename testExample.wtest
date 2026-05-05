@@ -1,2 +1,20 @@
 import mensajeros.*
 import transportes.*
+import destinos.*
+import paquetes.*
+
+describe "Test de mansajeros" {
+  test "1. Que roberto (90kg) puede llevar un paquete que está pago en un camión que tiene un acoplado." {
+    roberto.cambiarPeso(90)
+    roberto.cambiarTransporte(camion)
+    camion.cambiarCantAcoplados(1)
+    paquete.registrarPago()
+    assert.equals(true, paquete.puedeSerEntregadoPor(roberto))
+  }
+  test "2. Que neo con crédito no puede llevar un paquete que no está pago a la matrix." {
+    paquete.destino(matrix)
+    neo.cargarCredito()
+    assert.equals(false, paquete.puedeSerEntregadoPor(neo))
+  }
+}
+
